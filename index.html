@@ -421,19 +421,38 @@
     });
 
     // Mobile Menu Toggle
+    // const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    // const mobileCloseBtn = document.getElementById('mobile-close-btn');
+    // const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+    // mobileMenuBtn.addEventListener('click', () => {
+    //     mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    //     document.body.style.overflow = 'hidden'; // Prevent scrolling
+    // });
+
+    // mobileCloseBtn.addEventListener('click', () => {
+    //     mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+    //     document.body.style.overflow = ''; // Restore scrolling
+    // });
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileCloseBtn = document.getElementById('mobile-close-btn');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    });
+        if (mobileMenuBtn && mobileMenuOverlay) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            });
+        } else {
+            console.warn('Mobile menu button or overlay not found in DOM.');
+        }
 
-    mobileCloseBtn.addEventListener('click', () => {
-        mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = ''; // Restore scrolling
-    });
+        if (mobileCloseBtn && mobileMenuOverlay) {
+            mobileCloseBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            });
+        }
 </script>
 
 
